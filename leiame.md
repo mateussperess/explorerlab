@@ -7,7 +7,7 @@
 - Com node e NPM, abrir terminal e executar os seguintes comandos (em ordem):
 
   - 1st -> (no terminal) npm install
-  - 2nd -> (no terminal) npm run dev (package.json)
+  - 2nd -> (no terminal) npm run dev (package.json) - principal comando para startar o servidor
   - 3rd -> copiar endereço retornado e colar no navegador
   <!------------------------------------------------------->
 
