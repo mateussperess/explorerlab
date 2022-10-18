@@ -14,6 +14,9 @@ function setCardType(type) {
   const colors = {
     visa: ["#436D99", "#2D57F2"],
     mastercard: ["#DF6F29", "#C69347"],
+    oton_bank: ["#1a678b", "#144683"],
+    bb: ["#ffef38", "#003da4"],
+    bradesco: ["#ffffff", "#cc2229"],
     default: ["black", "gray"],
   }
 
