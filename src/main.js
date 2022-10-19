@@ -17,7 +17,7 @@ function setCardType(type) {
     mastercard: ["#DF6F29", "#C69347"],
     oton_bank: ["#1a678b", "#144683"],
     bb: ["#ffef38", "#003da4"],
-    bradesco: ["#ffffff", "#cc2229"],
+    elo: ["#ffcb05", "#ef4123"],
     default: ["black", "gray"],
   }
 
