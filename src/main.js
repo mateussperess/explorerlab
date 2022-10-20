@@ -8,9 +8,6 @@ const ccLogo = document.querySelector(".cc-logo span:nth-child(2) img")
 console.log(ccBgColor01)
 console.log(ccBgColor02)
 
-// ccBgColor01.setAttribute("fill", "green")
-// ccBgColor02.setAttribute("fill", "yellow")
-
 function setCardType(type) {
   const colors = {
     visa: ["#436D99", "#2D57F2"],
@@ -21,34 +18,21 @@ function setCardType(type) {
     default: ["black", "gray"],
   }
 
-  ccBgColor01.setAttribute("fill", colors[type][0]) // acessa a propiedade do objeto colors através de uma variável js
+  ccBgColor01.setAttribute("fill", colors[type][0])
   ccBgColor02.setAttribute("fill", colors[type][1])
 
-  ccLogo.setAttribute("src", `cc-${type}.svg`) //o "type" referencia o nome do svg, que possue os mesmos nomes dos arrays de cores ali em cima
+  ccLogo.setAttribute("src", `cc-${type}.svg`)
 }
 
-// setCardType("visa")
-// setCardType("mastercard")
-// setCardType("default")
-// console.log(setCardType)
+globalThis.setCardType = setCardType
 
-globalThis.setCardType = setCardType // transforma a função global, permitindo a execução pelo console (se necessário)
-
-// ----------------------------------------------------------------------------------------------------------------------
-
-// AULA 2
-
-// security-code
-document.getElementById("security-code")
-// ou
-const securityCode = document.querySelector("#security-code") // variável "const" significa que a variável é constante, ou seja, não muda
+const securityCode = document.querySelector("#security-code")
 const securityCodePattern = {
   mask: "0000",
 }
 
 const securityCodeMasked = IMask(securityCode, securityCodePattern)
 
-// expiration date
 const expirationDate = document.querySelector("#expiration-date")
 const expirationDatePattern = {
   mask: "MM{/}YY",
@@ -62,8 +46,8 @@ const expirationDatePattern = {
 
     YY: {
       mask: IMask.MaskedRange,
-      from: String(new Date().getFullYear()).slice(2), // função getFullYear coleta ano atual -> slice armazena os dois últimos valores da string
-      to: String(new Date().getFullYear() + 10).slice(2), // +10 pois o intervalo de ano de expiração é de 10 anos, ou seja, ano atual +10
+      from: String(new Date().getFullYear()).slice(2),
+      to: String(new Date().getFullYear() + 10).slice(2),
     },
   },
 }
@@ -101,17 +85,6 @@ const cardNumberPattern = {
       return number.match(item.regex)
     })
 
-    // if (dynamicMasked.value == 5) {
-    //   console.log("mastercard aqui")
-    //   setCardType("mastercard")
-    // } else {
-    //   if (dynamicMasked.value == 4) {
-    //     console.log("visa aqui")
-    //     setCardType("visa")
-    //   }
-    // }
-
-    // console.log(foundMask)
     return foundMask
   },
 }
